@@ -9,6 +9,9 @@ uvicorn = "*"
 sqlalchemy = "*"
 pandas = "*"
 pydantic = "*"
+pytest = "*"
+requests = "*"
+python-multipart = "*"
 
 [dev-packages]
 
