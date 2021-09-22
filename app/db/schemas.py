@@ -1,8 +1,8 @@
-from typing import List, Optional
-
 from pydantic import BaseModel
+from typing import Optional
 
 # Read Matches
+
 
 class MatchBase(BaseModel):
     date: str
@@ -22,6 +22,20 @@ class Match(MatchBase):
     class Config:
         orm_mode = True
 
+# Read matches agg by year
+
+
+class MatchesPerYear(BaseModel):
+    year: int
+    number_of_matches: int
+
+# Read matches played
+
+
+class MatchesPlayed(BaseModel):
+    country: str
+    matches_played: int
+
 
 # Read and Post Users
 
@@ -35,7 +49,6 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    disabled: bool
 
     class Config:
         orm_mode = True

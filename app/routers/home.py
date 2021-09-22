@@ -4,6 +4,4 @@ router = APIRouter()
 
 @router.get("/")
 def home():
-    return "YOOOO"
-
-
+    return "Welcome to the soccer history backend"
