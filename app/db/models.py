@@ -9,8 +9,9 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    email = Column(String, unique=True, index=True)
-    hashed_password = Column(String)
+    username = Column(String, unique=True, index=True)
+    password = Column(String)
+    disabled = Column(Boolean, default=True)
 
 
 class Match(Base):
@@ -32,3 +33,4 @@ Base.metadata.create_all(bind=engine)
 file_name = "app\db\matches.csv"
 df = pd.read_csv(file_name)
 df.to_sql(con=engine, index_label='id', name=Match.__tablename__, if_exists='replace')
+

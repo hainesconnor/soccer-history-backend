@@ -2,24 +2,6 @@ from typing import List, Optional
 
 from pydantic import BaseModel
 
-
-# Read and Post Users
-
-class UserBase(BaseModel):
-    email: str
-
-
-class UserCreate(UserBase):
-    password: str
-
-
-class User(UserBase):
-    id: int
-
-    class Config:
-        orm_mode = True
-
-
 # Read Matches
 
 class MatchBase(BaseModel):
@@ -39,3 +21,32 @@ class Match(MatchBase):
 
     class Config:
         orm_mode = True
+
+
+# Read and Post Users
+
+class UserBase(BaseModel):
+    username: str
+
+
+class UserCreate(UserBase):
+    password: str
+
+
+class User(UserBase):
+    id: int
+    disabled: bool
+
+    class Config:
+        orm_mode = True
+
+
+# Authentication tokens
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: Optional[str] = None

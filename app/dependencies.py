@@ -9,6 +9,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-# OAuth Scheme
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
