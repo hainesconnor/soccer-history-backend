@@ -16,6 +16,7 @@ Next, open up a shell with `pipenv shell` and then run `uvicorn app.main:app --r
 
 By default, the backend server should run at `http://127.0.0.1:8000/`
 
+Once you have the backend setup, then click on the link above for instructions on spinning up the frontend. 
 
 ## Backend Design
 This API returns historic international soccer match data.
