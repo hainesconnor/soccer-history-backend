@@ -29,7 +29,7 @@ class Match(Base):
 
 # Quick hack to setup the database
 Base.metadata.create_all(bind=engine)
-file_name = "app\db\matches.csv"
+file_name = "app/db/matches.csv"
 df = pd.read_csv(file_name)
 df.to_sql(con=engine, index_label='id',
           name=Match.__tablename__, if_exists='replace')
